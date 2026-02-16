@@ -24,7 +24,7 @@ public class Imguimc implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+        if ("true".equals(System.getProperty("imgui-mc.debug"))) {
             LOGGER.info("In development environment, pushing debug renderable.");
             pushRenderable(new DebugRenderable());
         }
